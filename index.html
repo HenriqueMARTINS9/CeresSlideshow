@@ -64,8 +64,8 @@
     </div>
     <div class="instagram-handle" id="instagram-handle">@user</div>
     <script>
-                async function fetchInstagramPhotos() {
-            const accessToken = "INSTAGRAM_GRAPH_API_ACCESS_TOKEN";
+        async function fetchInstagramPhotos() {
+            const accessToken = "INSTAGRAM_GRAPH_API_ACCESS_TOKEN"; 
             const userId = "INSTAGRAM_USER_ID"; 
             const mediaUrl = `https://graph.instagram.com/v17.0/${userId}/media?fields=id,media_type,media_url,caption&access_token=${accessToken}`;
             const userUrl = `https://graph.instagram.com/${userId}?fields=username&access_token=${accessToken}`;
@@ -73,11 +73,17 @@
             try {
                 // Fetch username
                 const userResponse = await fetch(userUrl);
+                if (!userResponse.ok) {
+                    throw new Error(`Error fetching username: ${userResponse.status} ${userResponse.statusText}`);
+                }
                 const userData = await userResponse.json();
                 document.getElementById('instagram-handle').textContent = `@${userData.username}`;
 
                 // Fetch media
                 const response = await fetch(mediaUrl);
+                if (!response.ok) {
+                    throw new Error(`Error fetching media: ${response.status} ${response.statusText}`);
+                }
                 const data = await response.json();
                 const images = data.data.filter(item => item.media_type === 'IMAGE' || item.media_type === 'CAROUSEL_ALBUM');
                 const slideshowTrack = document.getElementById('slideshow-track');
@@ -93,6 +99,7 @@
                 });
             } catch (error) {
                 console.error('Error fetching Instagram photos:', error);
+                alert('An error occurred while fetching Instagram photos. Please check the console for details.');
             }
         }
 
