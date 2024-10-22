@@ -93,7 +93,7 @@
             if (index >= track.children.length) {
                 index = 0;
             }
-            track.style.transform = `translateX(-${index * (100 / 3 )}%)`;
+            track.style.transform = `translateX(-${index * (100 / 3 + 3.33)}%)`;
         }
 
         setInterval(moveSlides, 3000);
