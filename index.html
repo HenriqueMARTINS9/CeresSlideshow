@@ -123,7 +123,8 @@
                     elem.msRequestFullscreen();
                 }
                 fullscreenButton.textContent = 'Quitter';
-            } else {
+            } 
+            if(document.fullscreenElement) {
                 if (document.exitFullscreen) {
                     document.exitFullscreen();
                 } else if (document.mozCancelFullScreen) { // Firefox
