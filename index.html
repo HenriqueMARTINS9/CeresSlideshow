@@ -57,7 +57,7 @@
             <!-- Images will be added here dynamically -->
         </div>
     </div>
-    <div class="instagram-handle" id="instagram-handle">@user</div>
+    <div class="instagram-handle" id="instagram-handle">@isapolo_ceres</div>
     <script>
         async function fetchInstagramPhotos() {
         try {
@@ -78,8 +78,6 @@
             slideDiv.appendChild(imgElement);
             slideshowTrack.appendChild(slideDiv);
             });
-            const usernameElement = document.getElementById('instagram-handle');
-                usernameElement.textContent = `@${data.username}`;
             } catch (error) {
                 console.error('Error fetching Instagram photos:', error);
             }
