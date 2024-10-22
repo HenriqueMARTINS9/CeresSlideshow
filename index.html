@@ -111,6 +111,7 @@
         function toggleFullscreen() {
             const elem = document.documentElement;
             const fullscreenButton = document.querySelector('.fullscreen-button');
+            console.log(document.fullscreenElement);
             if (!document.fullscreenElement) {
                 if (elem.requestFullscreen) {
                     elem.requestFullscreen();
