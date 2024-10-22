@@ -51,9 +51,19 @@
             width: 300px;
             height: auto;
         }
+
+        button.fullscreen-button {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        padding: 10px;
+        font-size: 1em;
+        cursor: pointer;
+        }
     </style>
 </head>
 <body>
+    <button class="fullscreen-button" onclick="toggleFullscreen()">Plein écran</button>
     <div class="slideshow-container">
         <div class="slideshow-track" id="slideshow-track">
             <!-- Images will be added here dynamically -->
@@ -96,6 +106,31 @@
                 index = 0;
             }
             track.style.transform = `translateX(calc(-${index * 33}% + 20px))`;
+        }
+
+        function toggleFullscreen() {
+            const elem = document.documentElement;
+            if (!document.fullscreenElement) {
+                if (elem.requestFullscreen) {
+                    elem.requestFullscreen();
+                } else if (elem.mozRequestFullScreen) { // Firefox
+                    elem.mozRequestFullScreen();
+                } else if (elem.webkitRequestFullscreen) { // Chrome, Safari, and Opera
+                    elem.webkitRequestFullscreen();
+                } else if (elem.msRequestFullscreen) { // IE/Edge
+                    elem.msRequestFullscreen();
+                }
+            } else {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                } else if (document.mozCancelFullScreen) { // Firefox
+                    document.mozCancelFullScreen();
+                } else if (document.webkitExitFullscreen) { // Chrome, Safari, and Opera
+                    document.webkitExitFullscreen();
+                } else if (document.msExitFullscreen) { // IE/Edge
+                    document.msExitFullscreen();
+                }
+            }
         }
 
         setInterval(moveSlides, 3000);
