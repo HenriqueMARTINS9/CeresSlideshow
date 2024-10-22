@@ -64,7 +64,6 @@
     </div>
     <div class="instagram-handle" id="instagram-handle">@user</div>
     <script>
-        require('dotenv').config();
         async function fetchInstagramPhotos() {
             const accessToken = process.env.INSTAGRAM_GRAPH_API_ACCESS_TOKEN; // Replace with your actual access token
             const userId = process.env.INSTAGRAM_USER_ID; // Replace with your actual user ID
