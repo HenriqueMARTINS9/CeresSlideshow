@@ -110,6 +110,7 @@
 
         function toggleFullscreen() {
             const elem = document.documentElement;
+            const fullscreenButton = document.querySelector('.fullscreen-button');
             if (!document.fullscreenElement) {
                 if (elem.requestFullscreen) {
                     elem.requestFullscreen();
@@ -120,6 +121,7 @@
                 } else if (elem.msRequestFullscreen) { // IE/Edge
                     elem.msRequestFullscreen();
                 }
+                fullscreenButton.textContent = 'Quitter';
             } else {
                 if (document.exitFullscreen) {
                     document.exitFullscreen();
@@ -130,6 +132,7 @@
                 } else if (document.msExitFullscreen) { // IE/Edge
                     document.msExitFullscreen();
                 }
+                fullscreenButton.textContent = 'Plein écran';
             }
         }
 
