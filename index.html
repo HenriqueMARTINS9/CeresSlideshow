@@ -14,9 +14,9 @@
             background-color: #fff;
             display: flex;
             justify-content: center;
+            flex-direction: column;
             align-items: center;
             height: 100vh;
-            flex-direction: column;
             overflow: hidden;
         }
         .slideshow-container {
@@ -26,27 +26,22 @@
             height: 90%;
             max-height: 900px;
             display: flex;
-            justify-content: center;
-            align-items: center;
             overflow: hidden;
-            background-color: #fff;
+            align-items: center;
         }
         .slideshow-track {
             display: flex;
-            gap: 10px;
+            align-items: center;
             transition: transform 1s ease;
+            gap: 10px;
         }
         .slide {
             min-width: 33%;
             transition: transform 0.5s ease;
-            display: flex;
-            justify-content: center;
-            align-items: center;
         }
         .slide img {
-            width: auto;
-            height: 100%;
-            object-fit: cover;
+            width: 100%;
+            height: auto;
         }
         .instagram-handle {
             margin-top: 20px;
