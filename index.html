@@ -64,8 +64,8 @@
     </div>
     <div class="instagram-handle" id="instagram-handle">@user</div>
     <script>
-        async function fetchInstagramPhotos() {
-            const accessToken = "INSTAGRAM_GRAPH_API_ACCESS_TOKEN"; 
+                async function fetchInstagramPhotos() {
+            const accessToken = "INSTAGRAM_GRAPH_API_ACCESS_TOKEN";
             const userId = "INSTAGRAM_USER_ID"; 
             const mediaUrl = `https://graph.instagram.com/v17.0/${userId}/media?fields=id,media_type,media_url,caption&access_token=${accessToken}`;
             const userUrl = `https://graph.instagram.com/${userId}?fields=username&access_token=${accessToken}`;
