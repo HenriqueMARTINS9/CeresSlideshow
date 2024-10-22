@@ -16,7 +16,6 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            flex-direction: column;
             overflow: hidden;
         }
         .slideshow-container {
@@ -26,33 +25,22 @@
             height: 90%;
             max-height: 900px;
             display: flex;
-            justify-content: center;
-            align-items: center;
             overflow: hidden;
-            background-color: #fff;
+            align-items: center;
         }
         .slideshow-track {
             display: flex;
-            gap: 20px;
+            align-items: center;
             transition: transform 1s ease;
         }
         .slide {
             min-width: 33%;
             transition: transform 0.5s ease;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            padding-right: 20px;
         }
         .slide img {
-            width: auto;
-            height: 100%;
-            object-fit: cover;
-        }
-        .instagram-handle {
-            margin-top: 20px;
-            font-size: 1.5em;
-            color: #333;
-            font-family: Arial, sans-serif;
+            width: 100%;
+            height: auto;
         }
     </style>
 </head>
