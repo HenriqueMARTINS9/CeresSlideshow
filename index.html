@@ -78,9 +78,11 @@
             slideDiv.appendChild(imgElement);
             slideshowTrack.appendChild(slideDiv);
             });
-        } catch (error) {
-            console.error('Error fetching Instagram photos:', error);
-        }
+            const usernameElement = document.getElementById('instagram-handle');
+                usernameElement.textContent = `@${data.username}`;
+            } catch (error) {
+                console.error('Error fetching Instagram photos:', error);
+            }
         }
         fetchInstagramPhotos();
 
